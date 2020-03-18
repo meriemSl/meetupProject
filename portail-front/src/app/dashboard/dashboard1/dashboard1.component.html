@@ -25,10 +25,64 @@
 	</ngb-carousel>
 </div>
 <!--Sfirst section ended-->
+<div class="row">
+<div class="col-md-12">
+	
 
+		<div class="card-body">
+			<div class="card-block">
+				<div class="flat-outline mb-2">
+					<a href="javascript:void(0)" class="btn btn-outline-primary btn-round">Sport et fitness</a>
+					<a href="javascript:void(0)" class="btn btn-outline-success btn-round">environnement</a>
+					<a href="javascript:void(0)" class="btn btn-outline-info btn-round">cuisine</a>
+					<a href="javascript:void(0)" class="btn btn-outline-warning btn-round">social</a>
+					<a href="javascript:void(0)" class="btn btn-outline-danger btn-round">famille</a>
+					<a href="javascript:void(0)" class="btn btn-outline-danger btn-round">Formation</a>
+					<a href="javascript:void(0)" class="btn btn-outline-danger btn-round">Photographie</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>
 <!--Line with Area Chart 1 Starts-->
 <div class="row">
 	<div class="col-xl-8 col-lg-12 col-12">
+		<div class="row">
+			<div class="col-12 mt-3 mb-1">
+				<div class="content-header">retrouvez des events</div>
+				 
+			</div>
+		</div>
+		<div class="card horizontal">
+			<div class="card-body">
+				<div class="card-stacked align-self-center">
+					<div class="px-3">
+						<h4 class="card-title">Card title</h4>
+						<p class="card-text">Toffee sugar plum brownie pastry gummies jelly.</p>
+						<a class="btn btn-raised btn-danger">Go somewhere</a>
+					</div>
+				</div>
+				<div class="card-img">
+					<img class="card-img-top img-fluid" src="assets/img/photos/06.jpg" alt="Card image cap">
+				</div>
+			</div>
+		</div>
+		<div class="card horizontal">
+			<div class="card-body">
+				<div class="card-stacked align-self-center">
+					<div class="px-3">
+						<h4 class="card-title">Card title</h4>
+						<p class="card-text">Toffee sugar plum brownie pastry gummies jelly.</p>
+						<a class="btn btn-raised btn-danger">Go somewhere</a>
+					</div>
+				</div>
+				<div class="card-img">
+					<img class="card-img-top img-fluid" src="assets/img/photos/06.jpg" alt="Card image cap">
+				</div>
+			</div>
+		</div>
 		<div class="card horizontal">
 			<div class="card-body">
 				<div class="card-stacked align-self-center">
@@ -44,6 +98,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<div class="col-xl-4 col-lg-12 col-12">
 		<div class="card">
 			<div class="card-header">
@@ -71,152 +126,64 @@
 </div>
 <!--Line with Area Chart 1 Ends-->
 
-<div class="row" matchHeight ="card">
-	<div class="col-xl-4 col-lg-12 col-12">
-		<div class="card">
-			<div class="card-header">
-				<h4 class="card-title">Statistics</h4>
-			</div>
-			<div class="card-body">
-
-				<p class="font-medium-2 text-muted text-center pb-2">Last 6 Months Sales</p>
-				<div id="Stack-bar-chart" class="height-300 Stackbarchart mb-2">
-					<x-chartist class="" [data]="Stackbarchart.data" [type]="Stackbarchart.type" [options]="Stackbarchart.options"
-					 [responsiveOptions]="Stackbarchart.responsiveOptions" [events]="Stackbarchart.events">
-					</x-chartist>
-				</div>
-
-			</div>
-		</div>
-	</div>
-	<div class="col-xl-8 col-lg-12 col-12">
-		<div class="card">
-			<div class="card-header">
-				<h4 class="card-title">Shopping Cart</h4>
-			</div>
-			<div class="card-body">
-				<table class="table table-responsive-sm text-center">
-					<thead>
-						<tr>
-							<th>Image</th>
-							<th>Product</th>
-							<th>Quantity</th>
-							<th>Status</th>
-							<th>Amount</th>
-							<th>Delete</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td><img class="media-object round-media height-50" src="assets/img/elements/01.png" alt="Generic placeholder image" /></td>
-							<td>Ferrero Rocher</td>
-							<td>1</td>
-							<td>
-								<a class="btn btn-raised btn-round btn-primary">Active</a>
-							</td>
-							<td>$19.94</td>
-							<td>
-								<a class="danger" data-original-title="" title="">
-									<i class="ft-x"></i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td><img class="media-object round-media height-50" src="assets/img/elements/07.png" alt="Generic placeholder image" /></td>
-							<td>Headphones</td>
-							<td>2</td>
-							<td>
-								<a class="btn btn-raised btn-round btn-danger">Disabled</a>
-							</td>
-							<td>$99.00</td>
-							<td>
-								<a class="danger" data-original-title="" title="">
-									<i class="ft-x"></i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td><img class="media-object round-media height-50" src="assets/img/elements/11.png" alt="Generic placeholder image" /></td>
-							<td>Camera</td>
-							<td>1</td>
-							<td>
-								<a class="btn btn-raised btn-round btn-info">Paused</a>
-							</td>
-							<td>$299.00</td>
-							<td>
-								<a class="danger" data-original-title="" title="">
-									<i class="ft-x"></i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td><img class="media-object round-media height-50" src="assets/img/elements/14.png" alt="Generic placeholder image" /></td>
-							<td>Beer</td>
-							<td>2</td>
-							<td>
-								<a class="btn btn-raised btn-round btn-success">Active</a>
-							</td>
-							<td>$24.51</td>
-							<td>
-								<a class="danger" data-original-title="" title="">
-									<i class="ft-x"></i>
-								</a>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
-</div>
 
 <div class="row" matchHeight ="card">
-	<div class="col-xl-8 col-lg-12 col-12">
-		<div class="card">
-			<div class="card-header">
-				<h4 class="card-title mb-0">Visit & Sales Statistics</h4>
-			</div>
-			<div class="card-body">
-				<div class="card-block">
-					<div class="chart-info mb-2">
-						<span class="text-uppercase mr-3"><i class="fa fa-circle primary font-small-2 mr-1"></i> Sales</span>
-						<span class="text-uppercase"><i class="fa fa-circle deep-purple font-small-2 mr-1"></i> Visits</span>
-					</div>
-					<div id="line-area2" class="height-400 lineArea2">
-						<x-chartist class="" [data]="lineArea2.data" [type]="lineArea2.type" [options]="lineArea2.options"
-						 [responsiveOptions]="lineArea2.responsiveOptions" [events]="lineArea2.events">
-
-						</x-chartist>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col-xl-4 col-lg-12 col-12">
-		<div class="card gradient-blackberry">
-			<div class="card-body">
-				<div class="card-block">
-					<h4 class="card-title white">Statistics</h4>
-					<div class="p-2 text-center">
-						<a class="white font-medium-1">Month</a>
-						<a class="btn btn-raised btn-round bg-white mx-3 px-3">Week</a>
-						<a class="white font-medium-1">Day</a>
-					</div>
-					<div class="my-3 text-center white">
-						<a class="font-large-2 d-block mb-1">$ 78.89 <span class="ft-arrow-up font-large-2"></span></a>
-						<span class="font-medium-1">Week2   +15.44</span>
-					</div>
-				</div>
-				<div id="lineChart" class="height-250 lineChart lineChartShadow">
-					<x-chartist class="" [data]="lineChart.data" [type]="lineChart.type" [options]="lineChart.options"
-					 [responsiveOptions]="lineChart.responsiveOptions" [events]="lineChart.events">
-					</x-chartist>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="row" matchHeight ="card">
-	
+	<!-- Decks section start -->
+<section id="decks">
+    <div class="row">
+        <div class="col-12 mt-3 mb-1">
+            <div class="content-header">retrouvez des groupes</div>
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card-deck-wrapper">
+                <div class="card-deck">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="card-img-top img-fluid" src="assets/img/photos/05.jpg" alt="Card image cap" />
+                            <div class="card-block">
+                                <h4 class="card-title">Card title</h4>
+                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="card-img-top img-fluid" src="assets/img/photos/09.jpg" alt="Card image cap" />
+                            <div class="card-block">
+                                <h4 class="card-title">Card title</h4>
+                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="card-img-top img-fluid" src="assets/img/photos/02.jpg" alt="Card image cap" />
+                            <div class="card-block">
+                                <h4 class="card-title">Card title</h4>
+                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="card-img-top img-fluid" src="assets/img/photos/03.jpg" alt="Card image cap" />
+                            <div class="card-block">
+                                <h4 class="card-title">Card title</h4>
+                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Decks section end -->
 </div>
