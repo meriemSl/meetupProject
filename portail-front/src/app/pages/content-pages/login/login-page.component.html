@@ -10,17 +10,25 @@
                     <div class="card-body">
                         <div class="card-block">
                             <h2 class="white">Login</h2>
-                            <form novalidate="" (ngSubmit)="onSubmit()" #f="ngForm">
+
+                          
+
+                            <form novalidate="" >
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <input type="email" class="form-control" name="inputEmail" id="inputEmail" placeholder="Email" ngModel required email>
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="Email" [(ngModel)]="loginUserData.email"  required >
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <input type="password" class="form-control" name="inputPass" id="inputPass" placeholder="Password" ngModel required>
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="Password" [(ngModel)]="loginUserData.password" required>
                                     </div>
+
+                                    <div *ngIf="mdpinc == true">
+                                    <p  style=" text-decoration-color: red;">Mot de passe incorrecte</p>
+                                    </div>
+
                                 </div>
 
                                 <div class="form-group">
@@ -36,11 +44,13 @@
 
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <button type="submit" class="btn btn-pink btn-block btn-raised">Submit</button>
+                                        <button type="submit" (click)="loginUser()" class="btn btn-pink btn-block btn-raised">Submit</button>
                                         <button type="button" class="btn btn-secondary btn-block btn-raised">Cancel</button>
+                                     
                                     </div>
                                 </div>
                             </form>
+                          
                         </div>
                     </div>
                     <div class="card-footer">

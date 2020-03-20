@@ -13,8 +13,27 @@ import { MaintenancePageComponent } from "./maintenance/maintenance-page.compone
 import { RegisterPageComponent } from "./register/register-page.component";
 
 
+import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
+import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
+
+export function getAuthServiceConfig(){
+let config = new AuthServiceConfig([
+    {
+      id: GoogleLoginProvider.PROVIDER_ID,
+      provider: new GoogleLoginProvider('254425459954-p69os47k30dcuq31kehfcn30ht38ogj7.apps.googleusercontent.com')
+
+    },
+    {
+        id:FacebookLoginProvider.PROVIDER_ID,
+        provider: new FacebookLoginProvider("546632349310704")
+      }
+  
+  ]);
+    return config;
+  } 
 @NgModule({
     imports: [
+        SocialLoginModule,
         CommonModule,
         ContentPagesRoutingModule,
         FormsModule        
@@ -27,6 +46,12 @@ import { RegisterPageComponent } from "./register/register-page.component";
         LoginPageComponent,
         MaintenancePageComponent,
         RegisterPageComponent
-    ]
+    ],
+    providers: [
+        //Toastr and auth providers
+        {
+            provide: AuthServiceConfig,
+            useFactory: getAuthServiceConfig
+          } ]
 })
 export class ContentPagesModule { }

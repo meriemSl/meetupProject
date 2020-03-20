@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from "@angular/router";
-
+import{ApiService} from '../../../api-service.service';
 @Component({
     selector: 'app-login-page',
     templateUrl: './login-page.component.html',
@@ -11,8 +11,9 @@ import { Router, ActivatedRoute } from "@angular/router";
 export class LoginPageComponent {
 
     @ViewChild('f') loginForm: NgForm;
-
-    constructor(private router: Router,
+    loginUserData = {}
+    mdpinc: boolean=false;
+    constructor(private router: Router,private apiService: ApiService,
         private route: ActivatedRoute) { }
 
     // On submit button click    
@@ -27,4 +28,20 @@ export class LoginPageComponent {
     onRegister() {
         this.router.navigate(['register'], { relativeTo: this.route.parent });
     }
+
+    loginUser(){
+        this.apiService.loginUser(this.loginUserData)
+          .subscribe(
+            res => {
+              console.log(res)
+              localStorage.setItem('token', res.token)
+              this.router.navigate(['/']);
+    
+            },
+            err =>   this.mdpinc=true
+         
+          )
+      
+        console.log(this.loginUserData)
+      }
 }
