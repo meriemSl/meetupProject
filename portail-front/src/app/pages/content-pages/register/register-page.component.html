@@ -16,7 +16,7 @@
                             </div>
                             <div class="col-12 col-sm-12 col-md-6 d-flex align-items-center">
                                 <div class="card-block mx-auto">
-                                    <form   (ngSubmit)="onSubmit()" #f="ngForm">
+                        <!--            <form   (ngSubmit)="registerUser(userData.value)" #userData="ngForm">
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">
@@ -43,14 +43,40 @@
                                         </div>
                                         <div class="form-group col-sm-offset-1">
                                             <div class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-                                                <input type="checkbox" class="custom-control-input" checked id="terms">
+                                              <input type="checkbox" class="custom-control-input" checked id="terms">
                                                 <label class="custom-control-label pl-2" for="terms">I agree <a>terms and conditions</a></label>
                                             </div>
                                         </div>
                                         <div class="form-group text-center">
-                                            <button type="button" class="btn btn-warning btn-raised" [disabled]="!f.valid">Get Started</button>
+                                       <!--    <button type="button" class="btn btn-warning btn-raised" [disabled]="!userData.valid">Get Started</button>
+                                       <input type="submit" value="register">
                                         </div>
+                                    </form>-->
+
+                                    <form class="form">
+
+                                        <div class="form-group">
+                                            <label for=""> Name</label>
+                                            <input [(ngModel)]="registerUserData.firstname" name="firstname" type="text" class="form-control rounded-0" required>
+                                          </div>
+
+
+                                        <div class="form-group">
+                                          <label for="">Email</label>
+                                          <input [(ngModel)]="registerUserData.email" name="email" type="text" class="form-control rounded-0" required>
+                                        </div>
+                                        <p *ngIf="msg == true ">Cet email est déja pris </p>
+                              
+                                        <div class="form-group">
+                                          <label for="">Passworld</label>
+                                          <input [(ngModel)]="registerUserData.password" name="password" type="password" class="form-control rounded-0" required>
+                                        </div>
+                                        <button (click)="registerUser()" type="button"  style=" width: 107px;  height: 44px; background-color: #ffffff;"
+                                         class="btn btn-primary float-right">Register</button>
+                                        <button class="btn btn-social-icon btn-google" (click)="signInWithGoogle()"><span class="fa fa-google"></span></button>
+                                        <button class="btn btn-social-icon btn-facebook" (click)="signInWithFB()"><span class="fa fa-facebook"></span></button>  
                                     </form>
+
                                 </div>
                             </div>
                         </div>
@@ -60,4 +86,6 @@
         </div>
     </div>
 </section>
+
+
 <!--Registration Page Ends-->

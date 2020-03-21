@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -19,14 +18,21 @@ import { CustomOption } from "./shared/toastr/custom-option";
 
 import { AuthService } from './shared/auth/auth.service';
 import { AuthGuard } from './shared/auth/auth-guard.service';
+import{ApiService} from './api-service.service';
 
+
+ 
+ 
 import * as $ from 'jquery';
 
-
+ 
 
 export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
   }
+
+
+  
 
 @NgModule({
     declarations: [
@@ -35,6 +41,7 @@ export function createTranslateLoader(http: HttpClient) {
         ContentLayoutComponent
     ],
     imports: [
+     
         BrowserAnimationsModule,
         StoreModule.forRoot({}),
         AppRoutingModule,
@@ -55,8 +62,9 @@ export function createTranslateLoader(http: HttpClient) {
         //Toastr and auth providers
         { provide: ToastOptions, useClass: CustomOption },
         AuthService,
-        AuthGuard
-    ],
+        AuthGuard,
+        ApiService,  ],
+     
     bootstrap: [AppComponent]
 })
 export class AppModule { }
