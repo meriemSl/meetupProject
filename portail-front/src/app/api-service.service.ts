@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
-import { User } from 'C:/Users/ASUS/Desktop/authentification/backend/model/User.js';
+import { User } from 'C:/Users/meriem/Desktop/projetportail/meetupProject/backend/model/User.js';
 
 @Injectable()
 export class ApiService {
