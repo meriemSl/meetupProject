@@ -18,12 +18,18 @@ import { CustomOption } from "./shared/toastr/custom-option";
 
 import { AuthService } from './shared/auth/auth.service';
 import { AuthGuard } from './shared/auth/auth-guard.service';
-import{ApiService} from './api-service.service';
+import{ApiService } from './api-service.service';
 
+
+  
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
  
  
 import * as $ from 'jquery';
+import { EventsComponent } from './pages/content-pages/events/events.component';
+import { HttpModule } from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
 
  
 
@@ -32,16 +38,21 @@ export function createTranslateLoader(http: HttpClient) {
   }
 
 
-  
 
 @NgModule({
     declarations: [
         AppComponent,
         FullLayoutComponent,
-        ContentLayoutComponent
+        ContentLayoutComponent,
+        EventsComponent,
     ],
     imports: [
-     
+        BrowserModule,
+        FormsModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        HttpModule,
+        FormsModule ,
         BrowserAnimationsModule,
         StoreModule.forRoot({}),
         AppRoutingModule,

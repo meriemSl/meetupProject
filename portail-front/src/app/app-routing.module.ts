@@ -8,6 +8,7 @@ import { Full_ROUTES } from "./shared/routes/full-layout.routes";
 import { CONTENT_ROUTES } from "./shared/routes/content-layout.routes";
 
 import { AuthGuard } from './shared/auth/auth-guard.service';
+import { EventsComponent } from './pages/content-pages/events/events.component';
 
 const appRoutes: Routes = [
   {
@@ -15,6 +16,7 @@ const appRoutes: Routes = [
     redirectTo: 'dashboard/dashboard1',
     pathMatch: 'full',
   },
+  { path: 'events', component: EventsComponent },
   { path: '', component: FullLayoutComponent, data: { title: 'full Views' }, children: Full_ROUTES, canActivate: [AuthGuard] },
   { path: '', component: ContentLayoutComponent, data: { title: 'content Views' }, children: CONTENT_ROUTES, canActivate: [AuthGuard] },
 ];
