@@ -4,16 +4,9 @@ const router = express.Router();
 const User = require('../model/user');
 const Event = require('../model/event');
 const mongoose = require('mongoose');
-const db = "mongodb://localhost:27017/meanAuthAngularr"
+
 const multer = require("multer");
 const path = require("path");
-mongoose.connect(db, err => {
-    if (err) {
-        console.log('error!' + err)
-    } else {
-        console.log('Connected to mongodb')
-    }
-})
 
 const storage = multer.diskStorage({
   destination: './upload/images',
@@ -25,7 +18,7 @@ const storage = multer.diskStorage({
 const upload = multer({
   storage: storage,
   limits: {
-      fileSize: 100000
+      fileSize: 10000000000
   }
 })
 
@@ -104,7 +97,6 @@ router.post('/login',(req,res) => {
 */
 
 router.post('/addevent',upload.single('imageUrl'), (req, res, next) => {
-  console.log(req.file);
     const event = new Event({
       title: req.body.title,
       description: req.body.description,
@@ -167,7 +159,7 @@ router.post('/addevent',upload.single('imageUrl'), (req, res, next) => {
       }
     );
   });
-  router.use('/findAll', (req, res, next) => {
+  router.get('/findAll', (req, res, next) => {
     Event.find().then(
       (events) => {
         res.status(200).json(events);

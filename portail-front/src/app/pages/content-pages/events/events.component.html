@@ -1,87 +1,109 @@
-<div class="row justify-content-md-center">
-  <div class="col-md-6">
-    <div class="card">
-      <div class="card-header">
-        <h4 class="card-title" id="basic-layout-card-center">Créer un événement </h4>
-        <p class="mb-0"> Informations requises
-          Entrez les informations suivantes pour créer votre évènement.</p>
-      </div>
-      <div class="card-body">
-        <div class="px-3">
-          <form class="form">
-            <div class="form-body">
-        
-
-              <div class="form-group">
-                <label for="eventRegInput1">Nom de l’évènement</label>
-                <input [(ngModel)]="addEventData.title" type="text" id="eventRegInput1" class="form-control"  name="title" placeholder="Ajoutez un nom court et clair" >
-              </div>
-
-              <div class="row">
-                <div class="form-group col-12 mb-2">
-                  <label for="eventRegInput2">Description</label>
-                  <textarea  [(ngModel)]="addEventData.description" id="projectinput9" rows="5" class="form-control" name="description" placeholder="Décrivez votre événement aux gens"></textarea>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="eventRegInput3">Photo ou vidéo de l’évènement</label>
-									<div class="col-md-9">
-										<label id="projectinput8" class="file center-block">
-                      <input [(ngModel)]="addEventData.imageUrl" type="file" id="file" name="imageUrl" (change)="selectImage($event)" />
-											<span class="file-custom"></span>
-										</label>
-									</div>
-								</div>
-
-              <div class="form-group">
-                <label for="timesheetinput1">Lieu</label>
-                <div class="position-relative has-icon-left">
-                  <input  [(ngModel)]="addEventData.lieu"type="text" id="timesheetinput1" class="form-control"  name="lieu" placeholder="Ajoutez un lieu ou une adresse">
-                  <div class="form-control-position">
-                    <i class="icon-pointer"></i>
-                  </div>
-                </div>
-              </div>
+<div class="card-block">
+  <ngb-tabset type="pills">
+    <ngb-tab title="Evenements">
+      <ng-template ngbTabContent>
+      
+      
+      
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title" id="basic-layout-card-center">Créer un événement </h4>
+              <p class="mb-0"> Informations requises
+                Entrez les informations suivantes pour créer votre évènement.</p>
+            </div>
+            <div class="card-body">
+              <div class="px-3">
+                <form class="form">
+                  <div class="form-body">
               
-							<div class="row">&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;<label for="eventRegInput3">Début</label>&nbsp;&nbsp;
-              <div class="form-group">
-            
-                <div class="position-relative has-icon-left">
-                  <input  [(ngModel)]="addEventData.dateDebut"  type="date" id="timesheetinput3" class="form-control" name="dateDebut">
-                  <div class="form-control-position">
-                    <i class="ft-message-square"></i>
+      
+                    <div class="form-group">
+                      <label for="eventRegInput1">Nom de l’évènement</label>
+                      <input [(ngModel)]="addEventData.title" type="text" id="eventRegInput1" class="form-control"  name="title" placeholder="Ajoutez un nom court et clair" >
+                    </div>
+      
+                    <div class="row">
+                      <div class="form-group col-12 mb-2">
+                        <label for="eventRegInput2">Description</label>
+                        <textarea  [(ngModel)]="addEventData.description" id="projectinput9" rows="5" class="form-control" name="description" placeholder="Décrivez votre événement aux gens"></textarea>
+                      </div>
+                    </div>
+      
+                    <div class="form-group">
+                      <label for="eventRegInput3">Photo ou vidéo de l’évènement</label>
+                        <div class="col-md-9">
+                          <label id="projectinput8" class="file center-block">
+                            <input  type="file" (change)="selectImage($event)" />
+                            <span class="file-custom"></span>
+                          </label>
+                        </div>
+                      </div>
+      
+                    <div class="form-group">
+                      <label for="timesheetinput1">Lieu</label>
+                      <div class="position-relative has-icon-left">
+                        <input  [(ngModel)]="addEventData.lieu"type="text" id="timesheetinput1" class="form-control"  name="lieu" placeholder="Ajoutez un lieu ou une adresse">
+                        <div class="form-control-position">
+                          <i class="icon-pointer"></i>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="row">&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;<label for="eventRegInput3">Début</label>&nbsp;&nbsp;
+                    <div class="form-group">
+                  
+                      <div class="position-relative has-icon-left">
+                        <input  [(ngModel)]="addEventData.dateDebut"  type="date" id="timesheetinput3" class="form-control" name="dateDebut">
+                        <div class="form-control-position">
+                          <i class="ft-message-square"></i>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                  <div class="row">&nbsp;&nbsp;&nbsp;
+                    
+                    &nbsp;&nbsp; <label for="eventRegInput3">Fin</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <div class="form-group">
+           
+                      <div class="position-relative has-icon-left">
+                        <input   [(ngModel)]="addEventData.dateFin"type="date" id="timesheetinput3" class="form-control" name="dateFin">
+                        <div class="form-control-position">
+                          <i class="ft-message-square"></i>
+                        </div>
+                      </div>
+                    </div>
+                  
+                  </div>
+                  </div>
+      
+                  <div class="form-actions center">
+                    <button type="button" class="btn btn-raised btn-warning mr-1">
+                      <i class="ft-x"></i> Annuler
+                    </button>
+                    <button (click)="addEvent()" type="button" class="btn btn-raised btn-primary">
+                      <i class="fa fa-check-square-o"></i> Créer
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
-            <div class="row">&nbsp;&nbsp;&nbsp;
-              
-              &nbsp;&nbsp; <label for="eventRegInput3">Fin</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <div class="form-group">
-     
-                <div class="position-relative has-icon-left">
-                  <input   [(ngModel)]="addEventData.dateFin"type="date" id="timesheetinput3" class="form-control" name="dateFin">
-                  <div class="form-control-position">
-                    <i class="ft-message-square"></i>
-                  </div>
-                </div>
-              </div>
-            
-            </div>
-            </div>
-
-            <div class="form-actions center">
-              <button type="button" class="btn btn-raised btn-warning mr-1">
-                <i class="ft-x"></i> Annuler
-              </button>
-              <button (click)="addEvent()" type="button" class="btn btn-raised btn-primary">
-                <i class="fa fa-check-square-o"></i> Créer
-              </button>
-            </div>
-          </form>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
+      
+      
+      
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab>
+      <ng-template ngbTabTitle>groupe</ng-template>
+      <ng-template ngbTabContent>
+         <app-group></app-group>
+      </ng-template>
+    </ngb-tab>
+  
+  </ngb-tabset>
+</div>
+<div class="row justify-content-md-center">
+  

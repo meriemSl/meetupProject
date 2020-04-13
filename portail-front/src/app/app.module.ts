@@ -30,6 +30,9 @@ import * as $ from 'jquery';
 import { EventsComponent } from './pages/content-pages/events/events.component';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { GroupComponent } from './pages/content-pages/group/group.component';
+import { TagInputModule } from 'ngx-chips';
+import { GroupServiceService } from './services/group-service.service';
 
  
 
@@ -45,6 +48,7 @@ export function createTranslateLoader(http: HttpClient) {
         FullLayoutComponent,
         ContentLayoutComponent,
         EventsComponent,
+        GroupComponent
     ],
     imports: [
         BrowserModule,
@@ -60,6 +64,7 @@ export function createTranslateLoader(http: HttpClient) {
         HttpClientModule,
         ToastModule.forRoot(),
         NgbModule.forRoot(),
+        TagInputModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
@@ -74,7 +79,9 @@ export function createTranslateLoader(http: HttpClient) {
         { provide: ToastOptions, useClass: CustomOption },
         AuthService,
         AuthGuard,
-        ApiService,  ],
+        ApiService, 
+        GroupServiceService 
+      ],
      
     bootstrap: [AppComponent]
 })

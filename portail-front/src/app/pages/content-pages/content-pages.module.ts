@@ -16,6 +16,7 @@ import { RegisterPageComponent } from "./register/register-page.component";
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
 import { EventsComponent } from './events/events.component';
+import { GroupComponent } from './group/group.component';
 
 export function getAuthServiceConfig(){
 let config = new AuthServiceConfig([
@@ -47,11 +48,13 @@ let config = new AuthServiceConfig([
         LoginPageComponent,
         MaintenancePageComponent,
         RegisterPageComponent,
-        EventsComponent
+        EventsComponent,
+        GroupComponent
     ],
     providers: [
         //Toastr and auth providers
         {
+            
             provide: AuthServiceConfig,
             useFactory: getAuthServiceConfig
           } ]

@@ -1,11 +1,11 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, FormGroup, FormBuilder } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ApiService } from 'app/api-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import {GroupComponent} from '../group/group.component'
 
 @Component({
   selector: 'app-events',
@@ -14,34 +14,54 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class EventsComponent implements OnInit {
 
-  addEventData= {};
+  addEventData 
   title = 'fileUpload';
   images;
+  formData = new FormData();
+  form: FormGroup;
   ngOnInit(){}
-  constructor(private apiService: ApiService,private router: Router,private route: ActivatedRoute,  private http: HttpClient , private element: ElementRef,) { }
+  constructor(private apiService: ApiService,
+              private router: Router,
+              private route: ActivatedRoute, 
+              private http: HttpClient ,
+              private element: ElementRef,
+              public fb: FormBuilder
+              ) { 
+                this.form = this.fb.group({
+                  title: [''],
+                  description : [''],
+                  lieu : [''],
+                  imageUrl: [null]
+
+               })
+  
+  }
 
   selectImage(event) {
-    // if (event.target.files.length > 0) {
-    //   const imageUrl = event.target.files[0];
+   
+      const file = (event.target as HTMLInputElement).files[0];
+      
+      // this.formData.append('imageUrl', event.target.files[0]);
+      this.form.patchValue({
+        imageUrl: file
+      });
+      this.form.get('imageUrl').updateValueAndValidity()
+      console.log(this.form.get('imageUrl').value)
 
-    //   this.images = imageUrl;
-  // }
-      const reader = new FileReader()
-     
-      reader.readAsDataURL(event.target.files[0]);
-      this.images = event.target.files[0].name
-      // formData.append('images', event.target.files[0]);
-    
   }
     addEvent(){
-      console.log(this.addEventData)
-       this.apiService.addEvent(this.addEventData).subscribe(
-         res => {
-          const formData = new FormData();
+    
+          this.formData.append('title', this.addEventData.title);
+          this.formData.append('description', this.addEventData.description);
+          this.formData.append('dateDebut', this.addEventData.dateDebut);
+          this.formData.append('dateFin', this.addEventData.dateFin);
+          this.formData.append('lieu', this.addEventData.lieu);
+          this.formData.append('imageUrl' , this.form.get('imageUrl').value );
 
-          console.log(this.images)   
-          formData.append('imageUrl', this.images);
-           console.log(res)
+       this.apiService.addEvent(this.formData).subscribe(
+         res => {
+         
+          console.log(res)
            this.router.navigate(['/']);
          },
        
