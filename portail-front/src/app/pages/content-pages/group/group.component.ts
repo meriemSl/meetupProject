@@ -56,6 +56,8 @@ submitForm(): void {
   // formData.append("lieu", this.form.get('image').value);
   formData.append("image", this.form.get('image').value);
   console.log(formData.get('image'))
+
+  
 this.groupService.create(formData).subscribe(
   () => {
       this.toastr.success("sucess");

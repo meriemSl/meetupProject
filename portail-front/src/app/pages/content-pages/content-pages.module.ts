@@ -48,8 +48,8 @@ let config = new AuthServiceConfig([
         LoginPageComponent,
         MaintenancePageComponent,
         RegisterPageComponent,
-        EventsComponent,
-        GroupComponent
+        // EventsComponent,
+        // GroupComponent
     ],
     providers: [
         //Toastr and auth providers

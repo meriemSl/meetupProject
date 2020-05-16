@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders, HttpResponse} from '@angular/common/http';
-import { User } from 'C:/Users/meriem/Desktop/projetportail/meetupProject/backend/model/User.js';
-import { Event } from 'C:/Users/meriem/Desktop/projetportail/meetupProject/backend/model/Event.js';
+import { User } from '../../../backend/model/User.js';
+import { Event } from '../../../backend/model/Event.js';
 import { Observable } from 'rxjs';
 @Injectable()
 export class ApiService {

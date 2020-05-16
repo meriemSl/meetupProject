@@ -45,9 +45,7 @@ export class Dashboard1Component {
       this.apiServices.showEvents().subscribe (result => {
             console.log(result)
              this.events = result ;
-      }
-
-      
+      })
 
     //   console.log(this.groupService.groups)
   }
