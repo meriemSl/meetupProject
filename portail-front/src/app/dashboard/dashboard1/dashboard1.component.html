@@ -70,7 +70,7 @@
 					</div>
 				</div>
 				<div class="card-img">
-					<img class="card-img-top img-fluid" src="assets/img/photos/06.jpg" alt="Card image cap">
+					<img class="card-img-top img-fluid" src="assets/img/photos/{{event.imageUrl}}" alt="Card image cap">
 				</div>
 			</div>
 		</div>
@@ -120,7 +120,7 @@
                 <div class="card-deck">
                     <div class="card" *ngFor="let group of groups">
                         <div class="card-body">
-                            <img class="card-img-top img-fluid" src="assets/img/photos/06.jpg" alt="Card image cap" />
+                            <img class="card-img-top img-fluid" src="../../../../../backend/upload/images/group/{{group.image}}" alt="Card image cap" />
                             <div class="card-block">
                                 <h4 class="card-title">{{group.name}}</h4>
                                 <p class="card-text"> {{ group.description }} </p>

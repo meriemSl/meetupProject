@@ -20,13 +20,13 @@
       
                     <div class="form-group">
                       <label for="eventRegInput1">Nom de l’évènement</label>
-                      <input [(ngModel)]="addEventData.title" type="text" id="eventRegInput1" class="form-control"  name="title" placeholder="Ajoutez un nom court et clair" >
+                      <input [(ngModel)]="title" type="text" id="eventRegInput1" class="form-control"  name="title" placeholder="Ajoutez un nom court et clair" >
                     </div>
       
                     <div class="row">
                       <div class="form-group col-12 mb-2">
                         <label for="eventRegInput2">Description</label>
-                        <textarea  [(ngModel)]="addEventData.description" id="projectinput9" rows="5" class="form-control" name="description" placeholder="Décrivez votre événement aux gens"></textarea>
+                        <textarea  [(ngModel)]="description" id="projectinput9" rows="5" class="form-control" name="description" placeholder="Décrivez votre événement aux gens"></textarea>
                       </div>
                     </div>
       
@@ -43,7 +43,7 @@
                     <div class="form-group">
                       <label for="timesheetinput1">Lieu</label>
                       <div class="position-relative has-icon-left">
-                        <input  [(ngModel)]="addEventData.lieu"type="text" id="timesheetinput1" class="form-control"  name="lieu" placeholder="Ajoutez un lieu ou une adresse">
+                        <input  [(ngModel)]="lieu"type="text" id="timesheetinput1" class="form-control"  name="lieu" placeholder="Ajoutez un lieu ou une adresse">
                         <div class="form-control-position">
                           <i class="icon-pointer"></i>
                         </div>
@@ -55,7 +55,7 @@
                     <div class="form-group">
                   
                       <div class="position-relative has-icon-left">
-                        <input  [(ngModel)]="addEventData.dateDebut"  type="date" id="timesheetinput3" class="form-control" name="dateDebut">
+                        <input  [(ngModel)]="dateDebut"  type="date" id="timesheetinput3" class="form-control" name="dateDebut">
                         <div class="form-control-position">
                           <i class="ft-message-square"></i>
                         </div>
@@ -68,7 +68,7 @@
                     <div class="form-group">
            
                       <div class="position-relative has-icon-left">
-                        <input   [(ngModel)]="addEventData.dateFin"type="date" id="timesheetinput3" class="form-control" name="dateFin">
+                        <input   [(ngModel)]="dateFin"type="date" id="timesheetinput3" class="form-control" name="dateFin">
                         <div class="form-control-position">
                           <i class="ft-message-square"></i>
                         </div>

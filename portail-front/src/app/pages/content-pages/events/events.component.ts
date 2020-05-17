@@ -6,6 +6,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ApiService } from 'app/api-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import {GroupComponent} from '../group/group.component'
+import { ToastsManager } from 'ng2-toastr';
 
 @Component({
   selector: 'app-events',
@@ -15,16 +16,21 @@ import {GroupComponent} from '../group/group.component'
 export class EventsComponent implements OnInit {
 
   addEventData 
-  title = 'fileUpload';
+  title = '';
   images;
   formData = new FormData();
   form: FormGroup;
+  description: string | Blob;
+  dateDebut: string | Blob;
+  dateFin: string | Blob;
+  lieu: string | Blob;
   ngOnInit(){}
   constructor(private apiService: ApiService,
               private router: Router,
               private route: ActivatedRoute, 
               private http: HttpClient ,
               private element: ElementRef,
+              private toastr : ToastsManager,
               public fb: FormBuilder
               ) { 
                 this.form = this.fb.group({
@@ -51,23 +57,24 @@ export class EventsComponent implements OnInit {
   }
     addEvent(){
     
-          this.formData.append('title', this.addEventData.title);
-          this.formData.append('description', this.addEventData.description);
-          this.formData.append('dateDebut', this.addEventData.dateDebut);
-          this.formData.append('dateFin', this.addEventData.dateFin);
-          this.formData.append('lieu', this.addEventData.lieu);
+          this.formData.append('title', this.title);
+          this.formData.append('description', this.description);
+          this.formData.append('dateDebut', this.dateDebut);
+          this.formData.append('dateFin', this.dateFin);
+          this.formData.append('lieu', this.lieu);
           this.formData.append('imageUrl' , this.form.get('imageUrl').value );
 
        this.apiService.addEvent(this.formData).subscribe(
          res => {
          
           console.log(res)
-           this.router.navigate(['/']);
+          this.toastr.success("sucess");
+           //this.router.navigate(['/']);
          },
-       
-         err =>  {console.log(err)
           
-         }
+         err =>  {this.toastr.error('Erreur');}
+          
+         
        )
       
        }
