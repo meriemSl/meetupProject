@@ -34,6 +34,7 @@ export class LoginPageComponent {
           .subscribe(
             res => {
               console.log(res)
+              localStorage.setItem('user',JSON.stringify(res.user))
               localStorage.setItem('token', res.token)
               this.router.navigate(['/']);
     

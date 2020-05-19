@@ -69,7 +69,7 @@ export class EventsComponent implements OnInit {
          
           console.log(res)
           this.toastr.success("sucess");
-           //this.router.navigate(['/']);
+          this.router.navigate(['/']);
          },
           
          err =>  {this.toastr.error('Erreur');}

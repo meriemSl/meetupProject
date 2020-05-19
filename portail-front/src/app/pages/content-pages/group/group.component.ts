@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GroupServiceService } from 'app/services/group-service.service';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-group',
   templateUrl: './group.component.html',
@@ -15,7 +16,8 @@ export class GroupComponent implements OnInit {
 
   constructor(private groupService : GroupServiceService ,
               private toastr : ToastsManager, 
-              public fb: FormBuilder
+              public fb: FormBuilder,
+              public router : Router
               ) {
                 this.form = this.fb.group({
                   name: [''],
@@ -61,6 +63,7 @@ submitForm(): void {
 this.groupService.create(formData).subscribe(
   () => {
       this.toastr.success("sucess");
+      this.router.navigate(['/']);
   },
   (error) => {
       console.log(error);

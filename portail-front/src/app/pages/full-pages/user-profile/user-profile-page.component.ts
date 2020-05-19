@@ -21,7 +21,10 @@ export class UserProfilePageComponent implements OnInit {
         //recuperation des données enregistrés dans le LocalStorage lors de la connexion du User
         this.image=localStorage.getItem('image');
         this.name=localStorage.getItem('name');
-
+         
+        let  retrievedObject = localStorage.getItem('user');
+        console.log('retrievedObject: ', JSON.parse(retrievedObject)._id);
+         
        
     }
 

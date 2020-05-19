@@ -74,7 +74,7 @@
 				</div>
 			</div>
 		</div>
-		<ngb-pagination   [collectionSize]="events.length" [(page)]="page" style="float: right;"></ngb-pagination>
+		<ngb-pagination   [collectionSize]="70" [(page)]="page" style="float: right;"></ngb-pagination>
 	</div>
 	
 	<div class="col-xl-4 col-lg-12 col-12">
@@ -121,7 +121,7 @@
             <div class="card-deck-wrapper">
                 <div class="card-deck">
                     <div class="card" *ngFor="let group of groups">
-                        <div class="card-body">
+                        <div class="card-body" (click)='seeDetail(group._id)'>
                             <img class="card-img-top img-fluid" src="assets/img/photos/{{group.image}}" alt="Card image cap" />
                             <div class="card-block">
                                 <h4 class="card-title">{{group.name}}</h4>

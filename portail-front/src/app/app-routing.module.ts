@@ -10,6 +10,7 @@ import { CONTENT_ROUTES } from "./shared/routes/content-layout.routes";
 import { AuthGuard } from './shared/auth/auth-guard.service';
 import { EventsComponent } from './pages/content-pages/events/events.component';
 
+
 const appRoutes: Routes = [
   {
     path: '',
@@ -17,7 +18,6 @@ const appRoutes: Routes = [
     pathMatch: 'full',
   },
   { path: 'events', component: EventsComponent },
-  { path: 'detailPage/:id', component: DetailPageComponent },
   { path: '', component: FullLayoutComponent, data: { title: 'full Views' }, children: Full_ROUTES, canActivate: [AuthGuard] },
   { path: '', component: ContentLayoutComponent, data: { title: 'content Views' }, children: CONTENT_ROUTES, canActivate: [AuthGuard] },
 ];

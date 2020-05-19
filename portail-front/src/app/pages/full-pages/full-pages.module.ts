@@ -16,6 +16,7 @@ import { UserProfilePageComponent } from "./user-profile/user-profile-page.compo
 import { SearchComponent } from './search/search.component';
 import { FaqComponent } from './faq/faq.component';
 import { KnowledgeBaseComponent } from './knowledge-base/knowledge-base.component';
+import { DetailPageComponent } from './detail-page/detail-page.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { KnowledgeBaseComponent } from './knowledge-base/knowledge-base.componen
         UserProfilePageComponent,
         SearchComponent,
         FaqComponent,
-        KnowledgeBaseComponent
+        KnowledgeBaseComponent,
+        DetailPageComponent
     ]
 })
 export class FullPagesModule { }
