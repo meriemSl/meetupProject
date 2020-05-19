@@ -33,6 +33,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { GroupComponent } from './pages/content-pages/group/group.component';
 import { TagInputModule } from 'ngx-chips';
 import { GroupServiceService } from './services/group-service.service';
+import { DetailPageComponent } from './pages/detail-page/detail-page.component';
 
  
 
@@ -48,7 +49,8 @@ export function createTranslateLoader(http: HttpClient) {
         FullLayoutComponent,
         ContentLayoutComponent,
         EventsComponent,
-        GroupComponent
+        GroupComponent,
+        DetailPageComponent
     ],
     imports: [
         BrowserModule,

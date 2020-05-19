@@ -60,13 +60,13 @@
 				 
 			</div>
 		</div>
-		<div class="card horizontal" *ngFor="let event of events" >
+		<div class="card horizontal" *ngFor="let event of events | slice: 0:3  ">
 			<div class="card-body">
 				<div class="card-stacked align-self-center">
 					<div class="px-3">
 						<h4 class="card-title"> {{event.title}}</h4>
 						<p class="card-text">{{event.description}}</p>
-						<a class="btn btn-raised btn-danger">Go somewhere</a>
+						<a class="btn btn-raised btn-danger" (click)='seeDetail(event._id)'>voir plus</a>
 					</div>
 				</div>
 				<div class="card-img">
@@ -74,7 +74,7 @@
 				</div>
 			</div>
 		</div>
-		<ngb-pagination [collectionSize]="70" [(page)]="page" style="float: right;"></ngb-pagination>
+		<ngb-pagination   [collectionSize]="events.length" [(page)]="page" style="float: right;"></ngb-pagination>
 	</div>
 	
 	<div class="col-xl-4 col-lg-12 col-12">
@@ -115,22 +115,26 @@
         </div>
     </div>
     <div class="row">
+		<ngb-carousel>
+			<ng-template ngbSlide>
         <div class="col-12">
             <div class="card-deck-wrapper">
                 <div class="card-deck">
                     <div class="card" *ngFor="let group of groups">
                         <div class="card-body">
-                            <img class="card-img-top img-fluid" src="../../../../../backend/upload/images/group/{{group.image}}" alt="Card image cap" />
+                            <img class="card-img-top img-fluid" src="assets/img/photos/{{group.image}}" alt="Card image cap" />
                             <div class="card-block">
                                 <h4 class="card-title">{{group.name}}</h4>
                                 <p class="card-text"> {{ group.description }} </p>
                                 <p class="card-text"><small class="text-muted"> {{group.tags}}</small></p>
                             </div>
                         </div>
-                    </div>
+					</div>
                 </div>
             </div>
-        </div>
+		</div>
+	  </ng-template>
+   </ngb-carousel>	
     </div>
 </section>
 <!-- Decks section end -->

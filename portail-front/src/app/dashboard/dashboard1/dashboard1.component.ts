@@ -50,4 +50,7 @@ export class Dashboard1Component {
     //   console.log(this.groupService.groups)
   }
 
+  seeDetail(id ){
+  }
+
 }
