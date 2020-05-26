@@ -1,0 +1,69 @@
+
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title" id="basic-layout-card-center">Créer un groupe </h4>
+              <p class="mb-0"> Informations requises
+                Entrez les informations suivantes pour créer votre groupe.</p>
+            </div>
+            <div class="card-body">
+              <div class="px-3">
+                <form class="form" [formGroup]="form" (ngSubmit)="submitForm()">
+                  <div class="form-body">
+                    <div class="form-group">
+                      <label for="eventRegInput1">Nom du groupe</label>
+                      <input  type="text" id="eventRegInput1" class="form-control"  name="title" placeholder="Ajoutez un nom court et clair" formControlName="name" >
+                    </div>
+      
+                    <div class="row">
+                      <div class="form-group col-12 mb-2">
+                        <label for="eventRegInput2">Description</label>
+                        <textarea   id="projectinput9" rows="5" class="form-control" name="description" placeholder="Décrivez votre votre groupe aux gens" formControlName="description" ></textarea>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="timesheetinput1">catégories  </label>
+                      <div class="col-xl-4 col-lg-4 col-12">
+                          <div class="card-block">
+                            <div>
+                              <tag-input [(ngModel)]="items" (onSelect)="onSelect($event)" >
+                              </tag-input>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+      
+                    <div class="form-group">
+                      <label for="eventRegInput3">Photo du groupe</label>
+                        <div class="col-md-9">
+                          <label id="projectinput8" class="file center-block">
+                            <input  type="file" (change)="uploadFile($event)" />
+                            <span class="file-custom"></span>
+                          </label>
+                        </div>
+                      </div>
+      
+                    <div class="form-group">
+                      <label for="timesheetinput1">Lieu</label>
+                      <div class="position-relative has-icon-left">
+                        <input  type="text" id="timesheetinput1" class="form-control"  name="lieu" placeholder="Ajoutez un lieu ou une adresse" formControlName="lieu" >
+                        <div class="form-control-position">
+                          <i class="icon-pointer"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <div class="form-actions center">
+                    <button type="button" class="btn btn-raised btn-warning mr-1">
+                      <i class="ft-x"></i> Annuler
+                    </button>
+                    <button (click)="submitForm()" type="button" class="btn btn-raised btn-primary">
+                      <i class="fa fa-check-square-o"></i> Créer
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>

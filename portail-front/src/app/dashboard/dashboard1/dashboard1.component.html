@@ -1,0 +1,137 @@
+<!--Statistics cards Starts-->
+<div class="row">
+	<ngb-carousel>
+		<ng-template ngbSlide>
+			<img  class='img1' src="assets/img/photos/gydc.jpg" alt="Random first slide">
+			<div class="carousel-caption">
+				<!-- <h3>First slide label</h3> -->
+				<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+			</div>
+		</ng-template>
+		<ng-template ngbSlide>
+			<img class='img1' src="assets/img/photos/arci.jpg" alt="Random second slide">
+			<div class="carousel-caption">
+				<!-- <h3>Second slide label</h3> -->
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</div>
+		</ng-template>
+		<ng-template ngbSlide>
+			<img class='img1' src="assets/img/photos/jet.jpg" alt="Random third slide">
+			<div class="carousel-caption">
+				<!-- <h3>Third slide label</h3> -->
+				<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+			</div>
+		</ng-template>
+	</ngb-carousel>
+</div>
+<!--Sfirst section ended-->
+<div class="row">
+<div class="col-md-12">
+	
+
+		<div class="card-body">
+			<div class="card-block">
+				<div class="flat-outline mb-2">
+					<a href="javascript:void(0)" class="btn btn-outline-primary btn-round">Sport et fitness</a>
+					<a href="javascript:void(0)" class="btn btn-outline-success btn-round">environnement</a>
+					<a href="javascript:void(0)" class="btn btn-outline-info btn-round">cuisine</a>
+					<a href="javascript:void(0)" class="btn btn-outline-warning btn-round">social</a>
+					<a href="javascript:void(0)" class="btn btn-outline-danger btn-round">famille</a>
+					<a href="javascript:void(0)" class="btn btn-outline-info btn-round">Formation</a>
+					<a href="javascript:void(0)" class="btn btn-outline-danger btn-round">Photographie</a>
+					<a href="javascript:void(0)" class="btn btn-outline-primary btn-round">Sport et fitness</a>
+					<a href="javascript:void(0)" class="btn btn-outline-success btn-round">environnement</a>
+					<a href="javascript:void(0)" class="btn btn-outline-info btn-round">cuisine</a>
+					<a href="javascript:void(0)" class="btn btn-outline-warning btn-round">social</a>
+					
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+<!--Line with Area Chart 1 Starts-->
+<div class="row">
+	<div class="col-xl-8 col-lg-12 col-12">
+		<div class="row">
+			<div class="col-12 mt-3 mb-1">
+				<div class="content-header">retrouvez des events</div>
+				 
+			</div>
+		</div>
+		<div class="card horizontal" *ngFor="let event of events" >
+			<div class="card-body">
+				<div class="card-stacked align-self-center">
+					<div class="px-3">
+						<h4 class="card-title"> {{event.title}}</h4>
+						<p class="card-text">{{event.description}}</p>
+						<a class="btn btn-raised btn-danger">Go somewhere</a>
+					</div>
+				</div>
+				<div class="card-img">
+					<img class="card-img-top img-fluid" src="assets/img/photos/06.jpg" alt="Card image cap">
+				</div>
+			</div>
+		</div>
+		<ngb-pagination [collectionSize]="70" [(page)]="page" style="float: right;"></ngb-pagination>
+	</div>
+	
+	<div class="col-xl-4 col-lg-12 col-12">
+		<div class="card">
+			<div class="card-header">
+				<h4 class="card-title">Calendar</h4>
+			</div>
+			<div class="card-body">
+				<div class="card-block">
+					<div class="card-block">
+						<ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
+			
+						<div class="block mt-3 mb-3">
+						  <button class="btn btn-sm btn-outline-primary" (click)="dp.navigateTo({year: 2013, month: 2})">To Feb 2013</button>
+						  <button class="btn btn-sm btn-outline-primary" (click)="dp.navigateTo()">To current month</button>
+						  <button class="btn btn-sm btn-outline-primary" (click)="selectToday()">Select Today</button>
+						</div>
+			
+						<p>Month: {{ date.month }}.{{ date.year }}</p>
+						<p>Model: {{ model | json }}</p>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+	</div>			
+</div>
+<!--Line with Area Chart 1 Ends-->
+
+
+<div class="row" matchHeight ="card">
+	<!-- Decks section start -->
+<section id="decks">
+    <div class="row">
+        <div class="col-12 mt-3 mb-1">
+            <div class="content-header">retrouvez des groupes</div>
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card-deck-wrapper">
+                <div class="card-deck">
+                    <div class="card" *ngFor="let group of groups">
+                        <div class="card-body">
+                            <img class="card-img-top img-fluid" src="assets/img/photos/06.jpg" alt="Card image cap" />
+                            <div class="card-block">
+                                <h4 class="card-title">{{group.name}}</h4>
+                                <p class="card-text"> {{ group.description }} </p>
+                                <p class="card-text"><small class="text-muted"> {{group.tags}}</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Decks section end -->
+</div>
