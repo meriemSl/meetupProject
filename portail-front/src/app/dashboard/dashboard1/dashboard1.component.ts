@@ -16,6 +16,10 @@ export interface Chart {
 import { NgbDateStruct, NgbDatepickerI18n, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
 import { GroupServiceService } from 'app/services/group-service.service';
 import { ApiService } from 'app/api-service.service';
+<<<<<<< HEAD
+=======
+import { Router } from '@angular/router';
+>>>>>>> 9903b325cca36ee574cd79beb7683a58dc383b6f
 
 const now = new Date();
 const I18N_VALUES = {
@@ -34,9 +38,20 @@ const I18N_VALUES = {
 export class Dashboard1Component {
   groups : any  
   events : any 
+<<<<<<< HEAD
   constructor (private groupService : GroupServiceService , private apiServices : ApiService ) {}
   ngOnInit()
   {
+=======
+  user : any
+  constructor (private groupService : GroupServiceService , private apiServices : ApiService , private router : Router) {}
+  ngOnInit()
+  {  
+    //  this.user = localStorage.getItem('user')
+  let  retrievedObject = localStorage.getItem('user');
+  console.log('retrievedObject: ', JSON.parse(retrievedObject)._id);
+      
+>>>>>>> 9903b325cca36ee574cd79beb7683a58dc383b6f
       this.groupService.showAllGroup().subscribe (result => {
               console.log(result)
               this.groups = result
@@ -47,9 +62,20 @@ export class Dashboard1Component {
              this.events = result ;
       })
 
+<<<<<<< HEAD
       
 
     //   console.log(this.groupService.groups)
   }
 
+=======
+    //   console.log(this.groupService.groups)
+  }
+
+  seeDetail(id : string){
+    this.router.navigate(['pages/detailPage/'+id]);
+  }
+
+
+>>>>>>> 9903b325cca36ee574cd79beb7683a58dc383b6f
 }

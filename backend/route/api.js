@@ -9,7 +9,11 @@ const multer = require("multer");
 const path = require("path");
 
 const storage = multer.diskStorage({
+<<<<<<< HEAD
   destination: './upload/images',
+=======
+  destination: 'portail-front/assets/img',
+>>>>>>> 9903b325cca36ee574cd79beb7683a58dc383b6f
   filename: (req, file, cb) => {
       return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
   }
@@ -69,6 +73,7 @@ router.post('/register', (req, res) => {
 });
 
 router.post('/login',(req,res) => {
+<<<<<<< HEAD
   let userData = req.body
 
   User.findOne({email:userData.email},(error,user) =>{
@@ -91,6 +96,26 @@ router.post('/login',(req,res) => {
 
 
 
+=======
+    let userData = req.body
+
+    User.findOne({email:userData.email},(error,user) =>{
+        if(error){
+            console.log(error)
+        } else {
+            if(!user){
+                res.status(401).send('Invalid email')
+            } else if(user.password !== userData.password){
+                res.status(401).send('invalid pass')
+            }else {
+                let payload = { subject: user._id}
+                let token = jwt.sign(payload,'secretKey')
+                res.status(200).send({token , user})
+            }
+        }
+    })
+})
+>>>>>>> 9903b325cca36ee574cd79beb7683a58dc383b6f
 /*router.post("/upload", upload.single('imageUrl'), (req, res) => {
 
   res.json({

@@ -9,6 +9,7 @@ import { CONTENT_ROUTES } from "./shared/routes/content-layout.routes";
 
 import { AuthGuard } from './shared/auth/auth-guard.service';
 import { EventsComponent } from './pages/content-pages/events/events.component';
+<<<<<<< HEAD
 import { UpdateComponent } from './pages/content-pages/update/update.component';
 
 const appRoutes: Routes = [
@@ -18,6 +19,11 @@ const appRoutes: Routes = [
     data: { title: 'Update' }
   },
 
+=======
+
+
+const appRoutes: Routes = [
+>>>>>>> 9903b325cca36ee574cd79beb7683a58dc383b6f
   {
     path: '',
     redirectTo: 'dashboard/dashboard1',

@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders, HttpResponse} from '@angular/common/http';
+<<<<<<< HEAD
 import { User } from 'C:/Users/hanedi/Desktop/projetfinal/meetupProject-master/backend/model/User.js';
 import { Event } from 'C:/Users/hanedi/Desktop/projetfinal/meetupProject-master/backend/model/Event.js';
+=======
+import { User } from '../../../backend/model/User.js';
+import { Event } from '../../../backend/model/Event.js';
+>>>>>>> 9903b325cca36ee574cd79beb7683a58dc383b6f
 import { Observable } from 'rxjs';
 @Injectable()
 export class ApiService {
@@ -13,6 +18,7 @@ export class ApiService {
   private _loginUrl = "http://localhost:3000/api/login";
   private _addevent="http://localhost:3000/api/addevent"
   private _showEvents = "http://localhost:3000/api/findAll"
+<<<<<<< HEAD
 
   //hanedi 
   private _finduser = "http://localhost:3000/api2/find"
@@ -21,6 +27,8 @@ export class ApiService {
 
 
 
+=======
+>>>>>>> 9903b325cca36ee574cd79beb7683a58dc383b6f
   header = new HttpHeaders(
     {'Access-Control-Allow-Origin' : '*',
       'Content-type': 'application/json',
@@ -43,6 +51,7 @@ export class ApiService {
     loginUser(user){
       return this._http.post<any>(this._loginUrl, user)
     }
+<<<<<<< HEAD
 
     getUser(id : String){
       return this._http.get(this._finduser+'/'+id)
@@ -57,3 +66,6 @@ export class ApiService {
 }
 
 }
+=======
+  }
+>>>>>>> 9903b325cca36ee574cd79beb7683a58dc383b6f
