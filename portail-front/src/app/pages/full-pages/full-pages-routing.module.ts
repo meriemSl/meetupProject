@@ -9,10 +9,8 @@ import { UserProfilePageComponent } from "./user-profile/user-profile-page.compo
 import { SearchComponent } from './search/search.component';
 import { FaqComponent } from './faq/faq.component';
 import { KnowledgeBaseComponent } from './knowledge-base/knowledge-base.component';
-<<<<<<< HEAD
-=======
 import { DetailPageComponent } from './detail-page/detail-page.component';
->>>>>>> 9903b325cca36ee574cd79beb7683a58dc383b6f
+
 
 const routes: Routes = [
   {
@@ -74,9 +72,6 @@ const routes: Routes = [
         data: {
           title: 'Knowledge Base'
         }
-<<<<<<< HEAD
-      }  
-=======
       },
       {
         path: 'detailPage/:id',
@@ -86,7 +81,6 @@ const routes: Routes = [
         }
       }
        
->>>>>>> 9903b325cca36ee574cd79beb7683a58dc383b6f
     ]
   }
 ];

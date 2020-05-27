@@ -2,10 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GroupServiceService } from 'app/services/group-service.service';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import { FormBuilder, FormGroup } from '@angular/forms';
-<<<<<<< HEAD
-=======
 import { Router } from '@angular/router';
->>>>>>> 9903b325cca36ee574cd79beb7683a58dc383b6f
 @Component({
   selector: 'app-group',
   templateUrl: './group.component.html',
@@ -19,12 +16,8 @@ export class GroupComponent implements OnInit {
 
   constructor(private groupService : GroupServiceService ,
               private toastr : ToastsManager, 
-<<<<<<< HEAD
-              public fb: FormBuilder
-=======
               public fb: FormBuilder,
               public router : Router
->>>>>>> 9903b325cca36ee574cd79beb7683a58dc383b6f
               ) {
                 this.form = this.fb.group({
                   name: [''],
@@ -65,18 +58,12 @@ submitForm(): void {
   // formData.append("lieu", this.form.get('image').value);
   formData.append("image", this.form.get('image').value);
   console.log(formData.get('image'))
-<<<<<<< HEAD
-this.groupService.create(formData).subscribe(
-  () => {
-      this.toastr.success("sucess");
-=======
 
   
 this.groupService.create(formData).subscribe(
   () => {
       this.toastr.success("sucess");
       this.router.navigate(['/']);
->>>>>>> 9903b325cca36ee574cd79beb7683a58dc383b6f
   },
   (error) => {
       console.log(error);
