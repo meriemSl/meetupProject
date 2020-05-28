@@ -5,7 +5,7 @@ import { FormsModule, FormGroup, FormBuilder } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ApiService } from 'app/api-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { User } from 'C:/Users/hanedi/Desktop/projetfinal/meetupProject-master/backend/model/User.js';
+import { User } from '../../../../../../backend/model/User.js';
 import {NgForm} from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';

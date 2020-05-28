@@ -60,17 +60,12 @@
 				 
 			</div>
 		</div>
-<<<<<<< HEAD
 		<div class="card horizontal" *ngFor="let event of events" >
-=======
-		<div class="card horizontal" *ngFor="let event of events | slice: 0:3  ">
->>>>>>> 9903b325cca36ee574cd79beb7683a58dc383b6f
 			<div class="card-body">
 				<div class="card-stacked align-self-center">
 					<div class="px-3">
 						<h4 class="card-title"> {{event.title}}</h4>
 						<p class="card-text">{{event.description}}</p>
-<<<<<<< HEAD
 						<a class="btn btn-raised btn-danger">Go somewhere</a>
 					</div>
 				</div>
@@ -80,17 +75,6 @@
 			</div>
 		</div>
 		<ngb-pagination [collectionSize]="70" [(page)]="page" style="float: right;"></ngb-pagination>
-=======
-						<a class="btn btn-raised btn-danger" (click)='seeDetail(event._id)'>voir plus</a>
-					</div>
-				</div>
-				<div class="card-img">
-					<img class="card-img-top img-fluid" src="assets/img/photos/{{event.imageUrl}}" alt="Card image cap">
-				</div>
-			</div>
-		</div>
-		<ngb-pagination   [collectionSize]="70" [(page)]="page" style="float: right;"></ngb-pagination>
->>>>>>> 9903b325cca36ee574cd79beb7683a58dc383b6f
 	</div>
 	
 	<div class="col-xl-4 col-lg-12 col-12">
@@ -131,41 +115,22 @@
         </div>
     </div>
     <div class="row">
-<<<<<<< HEAD
-=======
-		<ngb-carousel>
-			<ng-template ngbSlide>
->>>>>>> 9903b325cca36ee574cd79beb7683a58dc383b6f
         <div class="col-12">
             <div class="card-deck-wrapper">
                 <div class="card-deck">
                     <div class="card" *ngFor="let group of groups">
-<<<<<<< HEAD
                         <div class="card-body">
                             <img class="card-img-top img-fluid" src="assets/img/photos/06.jpg" alt="Card image cap" />
-=======
-                        <div class="card-body" (click)='seeDetail(group._id)'>
-                            <img class="card-img-top img-fluid" src="assets/img/photos/{{group.image}}" alt="Card image cap" />
->>>>>>> 9903b325cca36ee574cd79beb7683a58dc383b6f
                             <div class="card-block">
                                 <h4 class="card-title">{{group.name}}</h4>
                                 <p class="card-text"> {{ group.description }} </p>
                                 <p class="card-text"><small class="text-muted"> {{group.tags}}</small></p>
                             </div>
                         </div>
-<<<<<<< HEAD
                     </div>
                 </div>
             </div>
         </div>
-=======
-					</div>
-                </div>
-            </div>
-		</div>
-	  </ng-template>
-   </ngb-carousel>	
->>>>>>> 9903b325cca36ee574cd79beb7683a58dc383b6f
     </div>
 </section>
 <!-- Decks section end -->

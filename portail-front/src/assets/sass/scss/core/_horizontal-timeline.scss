@@ -162,7 +162,7 @@ $output-bourbon-deprecation-warnings: false;
 		height: 16px;
 		width: 16px;
 		@include center;
-		background: url(assets/img/svg/cd-arrow.svg) no-repeat 0 0;
+		//background: url('../../../img/svg/cd-arrow.svg') no-repeat 0 0;
 	}
 
 	&.prev {

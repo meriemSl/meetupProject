@@ -3,20 +3,24 @@
     <div class="container-fluid">
         <div class="row full-height-vh">
             <div class="col-12 d-flex align-items-center justify-content-center">
-                <div class="card gradient-indigo-purple text-center width-400">
-                    <div class="card-img overlap">
-                        <img alt="element 06" class="mb-1" src="assets/img/portrait/avatars/avatar-08.png" width="190">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-block">
-                            <h2 class="white">Login</h2>
+                <div class="card gradient-indigo text-center width-400">
+               
+                    <div class="card-body" style="background: white">
+                        <div class="card-block" style="background: white">
+                            <h2  style="margin-bottom: 64px;
+                            color: #325a94;
+                            margin-top: 27px;
+                            ">Login</h2>
 
                           
 
                             <form novalidate="" >
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <input type="email" class="form-control" name="email" id="email" placeholder="Email" [(ngModel)]="loginUserData.email"  required >
+                                        <input type="email" class="form-control" 
+                                        name="email" id="email" placeholder="Email" 
+                                        [(ngModel)]="loginUserData.email" 
+                                         required style=" margin-bottom: 10px">
                                     </div>
                                 </div>
 
@@ -26,7 +30,7 @@
                                     </div>
 
                                     <div *ngIf="mdpinc == true">
-                                    <p  style=" text-decoration-color: red;">Mot de passe incorrecte</p>
+                                    <p  style=" text-decoration-color: red;">Incorrect Password</p>
                                     </div>
 
                                 </div>
@@ -36,7 +40,7 @@
                                         <div class="col-md-12">
                                             <div class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0 ml-3">
                                                 <input type="checkbox" class="custom-control-input" checked id="rememberme">
-                                                <label class="custom-control-label float-left white" for="rememberme">Remember Me</label>
+                                                <label class="custom-control-label float-left " style="color: #325a94" for="rememberme">Remember Me</label>
                                             </div>
                                         </div>
                                     </div>
@@ -44,8 +48,12 @@
 
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <button type="submit" (click)="loginUser()" class="btn btn-pink btn-block btn-raised">Submit</button>
-                                        <button type="button" class="btn btn-secondary btn-block btn-raised">Cancel</button>
+                                        <button type="submit" (click)="loginUser()" style="    background: #325a94;
+                                        
+                                        color: white;"
+                                         class="btn btn-block btn-raised">Submit</button>
+                                        <button type="button" class="btn btn-secondary btn-block btn-raised"   style="margin-top: 17px;
+    margin-bottom: 36px;">Cancel</button>
                                      
                                     </div>
                                 </div>
@@ -53,7 +61,9 @@
                           
                         </div>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer" 
+                   style=" background: #325a94"
+                >
                         <div class="float-left"><a (click)="onForgotPassword()" class="white">Recover Password</a></div>
                         <div class="float-right"><a (click)="onRegister()" class="white">New User?</a></div>
                     </div>
