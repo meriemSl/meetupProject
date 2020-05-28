@@ -6,14 +6,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row d-flex">
-                            <div class="col-12 col-sm-12 col-md-6 gradient-deep-orange-orange">
-                                <div class="card-block">
-                                    <div class="card-img overlap">  
-                                        <img alt="Card image cap" src="assets/img/elements/13.png" width="350" class="mx-auto d-block">
-                                    </div>
-                                    <h2 class="card-title font-large-1 text-center white mt-3">Registration</h2>
-                                </div>
-                            </div>
+                      
                             <div class="col-12 col-sm-12 col-md-6 d-flex align-items-center">
                                 <div class="card-block mx-auto">
                         <!--            <form   (ngSubmit)="registerUser(userData.value)" #userData="ngForm">
@@ -54,7 +47,10 @@
                                     </form>-->
 
                                     <form class="form">
-
+                                        <div class="card-block">
+                                
+                                            <h2 class="card-title font-large-1 text-center  mt-3" style="color: #47bfda">Registration</h2>
+                                        </div>
                                         <div class="form-group">
                                             <label for=""> Name</label>
                                             <input [(ngModel)]="registerUserData.firstname" name="firstname" type="text" class="form-control rounded-0" required>

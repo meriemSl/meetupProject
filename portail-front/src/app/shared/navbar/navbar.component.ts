@@ -10,7 +10,15 @@ import { TranslateService } from '@ngx-translate/core';
 export class NavbarComponent {
     currentLang = 'en';
     toggleClass = 'ft-maximize';
+    connected:Boolean = false;
     constructor(public translate: TranslateService) {
+        if( localStorage.getItem('token') == null){
+            this.connected = false;
+        }
+        else{
+        this.connected = true; }
+        console.log('this is connected ',this.connected)
+
         const browserLang: string = translate.getBrowserLang();
         translate.use(browserLang.match(/en|es|pt|de/) ? browserLang : 'en');
     }
@@ -25,5 +33,9 @@ export class NavbarComponent {
         }
         else
             this.toggleClass = 'ft-maximize'
+    }
+    logout(){
+        localStorage.setItem('token',null);
+        console.log(localStorage)
     }
 }
