@@ -13,7 +13,7 @@ export class ApiService {
   private _loginUrl = "http://localhost:3000/api/login";
   private _addevent="http://localhost:3000/api/addevent"
   private _showEvents = "http://localhost:3000/api/findAll"
-
+  private _showEvent = "http://localhost:3000/api/find/:id"
   //hanedi 
   private _finduser = "http://localhost:3000/api2/find"
   private _updateuser = "http://localhost:3000/api2/update"
@@ -36,6 +36,11 @@ export class ApiService {
     
     return this._http.get<any>(this._showEvents)
   }
+  showEvent():Observable<HttpResponse<any>>{
+    
+    return this._http.get<any>(this._showEvent)
+  }
+  
   registerUser(user:User){
     //Envoyer l'objet user vers l'url du backend
       return this._http.post<any>(this._registerUrl, user)
@@ -51,7 +56,7 @@ export class ApiService {
     updateUser(user : User){
       return this._http.put(this._updateuser + `/${user._id}` , user);
   }
-  
+    
   updateImage(id : string, fd:FormData){
     return this._http.put(this._updateimage + `/` + id,fd);
 }

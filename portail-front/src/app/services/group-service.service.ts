@@ -35,7 +35,7 @@ showAllGroup():Observable<HttpResponse<any>>
 showOneGroup(groupId: String):Observable<HttpResponse<any>>
 {
   return this.http
-         .get<any>('http://localhost:3000/group/:groupId')
+         .get<any>('http://localhost:3000/group/group/'+groupId)
          .pipe(
            map( result => {
              return result ;

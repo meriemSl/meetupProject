@@ -12,6 +12,7 @@ const PORT = 3000;
 const db = "mongodb://localhost:27017/meanAuthAngularr"
 // import groupRoutes from "./components/group/groupRoutes";
 const app = express();
+app.use(express.static(__dirname));
 app.use(cors());
 
 app.use(
@@ -29,6 +30,7 @@ app.use('/api', api)
 app.use('/api2', api2)
 app.use('/group',group )
 app.use('/profileImage', express.static('upload/images'));
+
 
 
 app.get('/',function(req,res){

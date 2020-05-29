@@ -8,7 +8,7 @@ const  Group  = require ("./group");
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, 'Upload/images/groups/')
+      cb(null, 'Upload/images/')
     },
     filename: function (req, file, cb) {
       cb(null, Date.now() + path.extname(file.originalname)) //Appending extension

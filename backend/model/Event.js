@@ -4,9 +4,9 @@
 var mongoose = require('mongoose');
 
 var eventSchema = mongoose.Schema({
-    title: { type: String, required: true },
+    name: { type: String, required: true },
     description: { type: String, required: true },
-    imageUrl: { type: String, required: true },
+    image: { type: String, required: true },
     dateDebut: {type:Date, required:true},
     dateFin: {type:Date, required:true},
     lieu: {type:String, required:true},
