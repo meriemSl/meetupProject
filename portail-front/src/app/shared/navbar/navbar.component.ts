@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { ApiService } from 'app/api-service.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-navbar',
@@ -11,7 +13,15 @@ export class NavbarComponent {
     currentLang = 'en';
     toggleClass = 'ft-maximize';
     connected:Boolean = false;
-    constructor(public translate: TranslateService) {
+    // searchEvent = {
+    //     query : ''
+    // };
+    searchQuery = {
+           query : ''
+          };
+    constructor(public translate: TranslateService , 
+                public apiService : ApiService  , 
+                private  router : Router ) {
         if( localStorage.getItem('token') == null){
             this.connected = false;
         }
@@ -34,8 +44,24 @@ export class NavbarComponent {
         else
             this.toggleClass = 'ft-maximize'
     }
+    searchEvent(value) {
+        console.log("am here")
+        localStorage.setItem('search','true')
+        this.searchQuery.query = value ;
+        console.log(this.searchQuery.query)
+      
+        this.apiService.searchEvent(this.searchQuery).subscribe(result => {
+          console.log(result)
+          this.apiService.searchedevents = result
+        
+      }) 
+      this.router.navigate([`/eventList`])
+         
+        
+    }
     logout(){
-        localStorage.setItem('token',null);
+        // localStorage.setItem('token',null);
+        localStorage.clear()
         console.log(localStorage)
     }
 }

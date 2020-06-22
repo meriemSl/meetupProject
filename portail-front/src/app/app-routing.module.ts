@@ -8,8 +8,9 @@ import { Full_ROUTES } from "./shared/routes/full-layout.routes";
 import { CONTENT_ROUTES } from "./shared/routes/content-layout.routes";
 
 import { AuthGuard } from './shared/auth/auth-guard.service';
-import { EventsComponent } from './pages/content-pages/events/events.component';
+import { EventsComponent } from './pages/full-pages/events/events.component';
 import { UpdateComponent } from './pages/content-pages/update/update.component';
+import { ShowEventsComponent } from './pages/full-pages/show-events/show-events.component';
 
 const appRoutes: Routes = [
   {
@@ -20,8 +21,15 @@ const appRoutes: Routes = [
 
   {
     path: '',
-    redirectTo: 'dashboard/dashboard1',
+    redirectTo: '/pages/login',
     pathMatch: 'full',
+  },
+  {
+    path: 'eventList',
+    component: ShowEventsComponent,
+    data: {
+      title: 'eventList'
+    }
   },
   { path: 'events', component: EventsComponent },
   { path: '', component: FullLayoutComponent, data: { title: 'full Views' }, children: Full_ROUTES, canActivate: [AuthGuard] },

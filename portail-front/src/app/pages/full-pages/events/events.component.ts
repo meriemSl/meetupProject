@@ -5,7 +5,7 @@ import { FormsModule, FormGroup, FormBuilder } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ApiService } from 'app/api-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import {GroupComponent} from '../group/group.component'
+// import {GroupComponent} from '../../full-pages/group/group.component'
 import { ToastsManager } from 'ng2-toastr';
 
 @Component({
@@ -34,7 +34,7 @@ export class EventsComponent implements OnInit {
               public fb: FormBuilder
               ) { 
                 this.form = this.fb.group({
-                  title: [''],
+                  name: [''],
                   description : [''],
                   lieu : [''],
                   imageUrl: [null]
@@ -57,13 +57,13 @@ export class EventsComponent implements OnInit {
   }
     addEvent(){
     
-          this.formData.append('title', this.title);
+          this.formData.append('name', this.title);
           this.formData.append('description', this.description);
           this.formData.append('dateDebut', this.dateDebut);
           this.formData.append('dateFin', this.dateFin);
           this.formData.append('lieu', this.lieu);
           this.formData.append('imageUrl' , this.form.get('imageUrl').value );
-
+       
        this.apiService.addEvent(this.formData).subscribe(
          res => {
          
@@ -71,8 +71,11 @@ export class EventsComponent implements OnInit {
           this.toastr.success("sucess");
           this.router.navigate(['/']);
          },
-          
-         err =>  {this.toastr.error('Erreur');}
+        
+         err =>  {
+            console.log(err)
+             this.toastr.error('Erreur');
+            }
           
          
        )

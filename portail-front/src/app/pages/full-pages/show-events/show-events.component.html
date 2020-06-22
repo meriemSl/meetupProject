@@ -1,0 +1,52 @@
+<!--Line with Area Chart 1 Starts-->
+<app-navbar></app-navbar>
+<div class="row">
+	<div class="col-xl-8 col-lg-12 col-12">
+		<div class="row">
+			<div class="col-12 mt-3 mb-1">
+				<div class="content-header">retrouvez des events</div>
+				 
+			</div>
+		</div>
+		<div class="card horizontal"  (click)='seeDetail(event._id)' *ngFor="let event of events | slice: 0:10  ">
+			<div class="card-body">
+				<div class="card-stacked align-self-center">
+					<div class="px-3">
+						<h4 class="card-title"> {{event.name}}</h4>
+						<p class="card-text">{{event.description}}</p>
+						<a class="btn btn-raised btn-danger"  (click)='Participate(event._id)' >participer</a>
+					</div>
+				</div>
+				<div class="card-img">
+					<img class="card-img-top img-fluid" src="http://localhost:3000/upload/images/{{event.image}}" alt="Card image cap">
+				</div>
+			</div>
+		</div>
+		<ngb-pagination   [collectionSize]="70" [(page)]="page" style="float: right;"></ngb-pagination>
+	</div>
+	
+	<div class="col-xl-4 col-lg-12 col-12">
+		<div class="card">
+			<div class="card-header">
+				<h4 class="card-title">Calendar</h4>
+			</div>
+			<div class="card-body">
+				<div class="card-block">
+					<div class="card-block">
+						<ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
+			
+						<div class="block mt-3 mb-3">
+						  <button class="btn btn-sm btn-outline-primary" (click)="dp.navigateTo({year: 2013, month: 2})">To Feb 2013</button>
+						  <button class="btn btn-sm btn-outline-primary" (click)="dp.navigateTo()">To current month</button>
+						  <button class="btn btn-sm btn-outline-primary" (click)="selectToday()">Select Today</button>
+						</div>
+			
+						<p>Month: {{ date.month }}.{{ date.year }}</p>
+						<p>Model: {{ model | json }}</p>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+	</div>			
+</div>

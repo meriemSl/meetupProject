@@ -15,8 +15,8 @@ import { RegisterPageComponent } from "./register/register-page.component";
 
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
-import { EventsComponent } from './events/events.component';
-import { GroupComponent } from './group/group.component';
+import { EventsComponent } from '../full-pages/events/events.component';
+import { GroupComponent } from '../full-pages/group/group.component';
 import { UpdateComponent } from './update/update.component';
 
 export function getAuthServiceConfig(){

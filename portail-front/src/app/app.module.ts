@@ -27,14 +27,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
  
  
 import * as $ from 'jquery';
-import { EventsComponent } from './pages/content-pages/events/events.component';
+import { EventsComponent } from './pages/full-pages/events/events.component';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { GroupComponent } from './pages/content-pages/group/group.component';
+import { GroupComponent } from './pages/full-pages/group/group.component';
 import { TagInputModule } from 'ngx-chips';
 import { GroupServiceService } from './services/group-service.service';
 import { UpdateComponent } from './pages/content-pages/update/update.component';
 import { DetailPageComponent } from './pages/full-pages/detail-page/detail-page.component';
+import { ShowEventsComponent } from './pages/full-pages/show-events/show-events.component';
 
  
 
@@ -51,7 +52,8 @@ export function createTranslateLoader(http: HttpClient) {
         ContentLayoutComponent,
         EventsComponent,
         GroupComponent,
-        UpdateComponent
+        UpdateComponent,
+        ShowEventsComponent
     ],
     imports: [
         BrowserModule,

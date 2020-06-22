@@ -53,6 +53,7 @@ export class Dashboard1Component {
              this.events = result ;
       })
 
+
     //   console.log(this.groupService.groups)
   }
 

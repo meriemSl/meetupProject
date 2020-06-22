@@ -53,6 +53,29 @@ router.get('/allgroup',function (req,res) {
     })
  });
 
+//...........................Chercher groupe...................//
+ router.post('/searchG', (req, res) => {
+    let q = req.body.query;
+    let query = {
+      "$or": [{"name": {"$regex": q, "$options": "i"}}, {"description": {"$regex": q, "$options": "i"}}]
+    };
+    
+    console.log(q)
+    Group.find(query).limit(6).then( groups => {
+        if(groups && groups.length && jobs.length > 0) {
+            console.log('found')
+        }
+        
+        
+        res.json(groups);
+
+    }).catch(err => {
+      res.sendStatus(404);
+    });
+  
+  });
+
+
 
 //------------------------delete GROUP----------------//
 router.delete('/delete/:groupId',function (req,res) {

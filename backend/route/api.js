@@ -159,6 +159,30 @@ router.post('/addevent',upload.single('imageUrl'), (req, res, next) => {
       }
     );
   });
+
+
+  //...........................Chercher groupe...................//
+ router.post('/search', (req, res) => {
+  let q = req.body.query;
+  let query = {
+    "$or": [{"name": {"$regex": q, "$options": "i"}}, {"description": {"$regex": q, "$options": "i"}}]
+  };
+  
+  console.log(q)
+  Event.find(query).limit(6).then( events => {
+      if(events && events.length && events.length > 0) {
+          console.log('found')
+      }
+      
+      
+      res.json(events);
+
+  }).catch(err => {
+    res.sendStatus(err);
+  });
+
+});
+
   router.get('/findAll', (req, res, next) => {
     Event.find().then(
       (events) => {
