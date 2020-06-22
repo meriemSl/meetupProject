@@ -12,6 +12,7 @@ import { EventsComponent } from './pages/content-pages/events/events.component';
 import { UpdateComponent } from './pages/content-pages/update/update.component';
 
 const appRoutes: Routes = [
+ 
   {
     path: 'update',
     component: UpdateComponent,

@@ -24,7 +24,7 @@ import{ApiService } from './api-service.service';
   
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
- 
+import{ChatModule} from './chat/chat.module';
  
 import * as $ from 'jquery';
 import { EventsComponent } from './pages/content-pages/events/events.component';
@@ -54,6 +54,7 @@ export function createTranslateLoader(http: HttpClient) {
         UpdateComponent
     ],
     imports: [
+         ChatModule,
         BrowserModule,
         FormsModule,
         HttpClientModule,
