@@ -42,7 +42,7 @@
     "d3": "^4.13.0",
     "datatables.net": "^1.10.15",
     "intl": "^1.2.5",
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.0",
     "ng-chartist": "^1.1.1",
     "ng-social": "^8.0.0",
     "ng-social-login-module": "^1.0.5",
